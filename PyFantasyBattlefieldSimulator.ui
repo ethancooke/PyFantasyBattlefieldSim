@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>simulationDialog</class>
+ <widget class="QDialog" name="simulationDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Py Fantasy Battlefield Simulator</string>
+  </property>
+  <property name="accessibleName">
+   <string/>
+  </property>
+  <widget class="QLabel" name="armyOfLightLabel">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>680</y>
+     <width>101</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Army of Light</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="armyOfDarknessLabel">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>680</y>
+     <width>131</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Army of Darkness</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="armyOfLightSpinner">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>670</y>
+     <width>121</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>100000</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="armyOfDarknessSpinner">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>670</y>
+     <width>121</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>100000</number>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>30</y>
+     <width>1261</width>
+     <height>631</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="runButton">
+   <property name="geometry">
+    <rect>
+     <x>1060</x>
+     <y>670</y>
+     <width>99</width>
+     <height>38</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Run</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="quitButton">
+   <property name="geometry">
+    <rect>
+     <x>1170</x>
+     <y>670</y>
+     <width>99</width>
+     <height>38</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="victorLabel">
+   <property name="geometry">
+    <rect>
+     <x>640</x>
+     <y>680</y>
+     <width>67</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Victor:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="victoryResultsLabel">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>680</y>
+     <width>251</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="setArmySizeButton">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>670</y>
+     <width>111</width>
+     <height>38</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Set Army Size</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
