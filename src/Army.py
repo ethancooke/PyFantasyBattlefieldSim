@@ -10,12 +10,13 @@ class Army:
 
     def generate_army(self, s_army_type: str, n_size: int):
         self.unit.clear()
+        append = self.unit.append
         if s_army_type == "Light":
             for unit in range(n_size):
-                self.unit += [ActorFactory.create_new_actor(randint(0, 4), unit)]
+                append(ActorFactory.create_new_actor(randint(0, 4), unit))
         if s_army_type == "Dark":
             for unit in range(n_size):
-                self.unit += [ActorFactory.create_new_actor(5, unit)]
+                append(ActorFactory.create_new_actor(5, unit))
 
     def to_string(self) -> str:
         army_string = ""
@@ -28,14 +29,15 @@ class Army:
         return self.unit[random_index]
 
     def find_nearest_actor(self, actor):
-        current_distance = 100
-        new_distance = 0
+        current_distance = actor.battlefield_max()
         l_unit_number = 0
         for index in range(self.get_size()):
             new_distance = actor.get_distance_from(self.unit[index])
             if new_distance < current_distance and self.unit[index].health_points >= 0:
                 l_unit_number = index
                 current_distance = new_distance
+                if current_distance <= actor.speed:  # New logic to focus on the first enemy found within movement reach
+                    break
         return self.unit[l_unit_number]
 
     def kill_actor(self, index):

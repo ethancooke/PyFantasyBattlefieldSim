@@ -10,7 +10,7 @@ def test_to_string():
 def test_fight():
     elf = Elf(0)
     elf.range = 10
-    elf.magic = 50
+    elf.bow_strength = 50
     elf.location[0] = 1
     elf.location[1] = 1
     enemy = Orc(0)

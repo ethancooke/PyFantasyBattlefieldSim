@@ -9,10 +9,9 @@ class Orc(Actor):
         Actor.__init__(self, n_actor_count)
         self.name += "_Orc"
         self.anger = randint(1, 50)
-        self.hunger = randint(1, 100)
-        self.size = randint(1, 50)
-        self.leadership = randint(1, 100)
-        self.location = [randint(500, 1000), randint(0, 1000)]
+        self.size = randint(5, 50)
+        self.location = [randint(500, self.battlefield_max()), randint(
+            0, self.battlefield_max())]
 
     def fight(self, enemy) -> int:
         damage = 0
@@ -21,9 +20,7 @@ class Orc(Actor):
         return damage
 
     def to_string(self) -> str:
-        return Actor.to_string(self) + "\nAnger : " + str(self.anger) + "\nHunger : " + str(
-            self.hunger) + "\nSize : " + str(
-            self.size) + "\nLeadership : " + str(self.leadership)
+        return Actor.to_string(self) + "\nAnger : " + str(self.anger) + "\nSize : " + str(self.size)
 
     def take_damage(self, damage):
         if damage >= self.size:

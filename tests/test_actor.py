@@ -8,23 +8,23 @@ def test_actor_name():
 
 def test_actor_health_is_within_50_to_100():
     actor = Actor(0)
-    assert 50 <= actor.health_points <= 100
+    assert 50 <= actor.health_points <= actor.unit_max()
 
 
 def test_actor_strength_is_within_1_to_100():
     actor = Actor(0)
-    assert 1 <= actor.strength <= 100
+    assert 1 <= actor.strength <= actor.unit_max()
 
 
 def test_actor_speed_is_within_1_to_100():
     actor = Actor(0)
-    assert 1 <= actor.speed <= 100
+    assert 1 <= actor.speed <= actor.unit_max()
 
 
 def test_actor_location_xy_is_within_0_to_100():
     actor = Actor(0)
-    assert 0 <= actor.location[0] <= 1000
-    assert 0 <= actor.location[1] <= 1000
+    assert 0 <= actor.location[0] <= actor.battlefield_max()
+    assert 0 <= actor.location[1] <= actor.battlefield_max()
 
 
 def test_to_string():
@@ -45,14 +45,14 @@ def test_get_distance_between_actors():
 def test_keep_in():
     actor = Actor(0)
     actor.location[0] = -1
-    actor.location[1] = 1001
+    actor.location[1] = actor.battlefield_max() + 1
     actor.keep_in()
     assert actor.location[0] == 0
-    assert actor.location[1] == 1000
-    actor.location[0] = 1001
+    assert actor.location[1] == actor.battlefield_max()
+    actor.location[0] = actor.battlefield_max() + 1
     actor.location[1] = -1
     actor.keep_in()
-    assert actor.location[0] == 1000
+    assert actor.location[0] == actor.battlefield_max()
     assert actor.location[1] == 0
     actor.location[0] = 50
     actor.location[1] = 50
@@ -83,7 +83,7 @@ def test_fight():
     actor = Actor(0)
     actor.strength = 25
     enemy = Actor(1)
-    enemy.health_points = 100
+    enemy.health_points = enemy.unit_max()
     actor.location[0] = 50
     actor.location[1] = 50
     enemy.location[0] = 50
@@ -94,7 +94,7 @@ def test_fight():
 def test_fight_from_distance():
     actor = Actor(0)
     enemy = Actor(1)
-    enemy.health_points = 100
+    enemy.health_points = enemy.unit_max()
     actor.location[0] = 50
     actor.location[1] = 40
     enemy.location[0] = 50

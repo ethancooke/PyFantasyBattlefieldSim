@@ -8,6 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class Ui_simulationDialog(object):
     def setupUi(self, simulationDialog):
         simulationDialog.setObjectName("simulationDialog")
@@ -54,16 +55,21 @@ class Ui_simulationDialog(object):
 
     def retranslateUi(self, simulationDialog):
         _translate = QtCore.QCoreApplication.translate
-        simulationDialog.setWindowTitle(_translate("simulationDialog", "Py Fantasy Battlefield Simulator"))
-        self.armyOfLightLabel.setText(_translate("simulationDialog", "Army of Light"))
-        self.armyOfDarknessLabel.setText(_translate("simulationDialog", "Army of Darkness"))
+        simulationDialog.setWindowTitle(_translate(
+            "simulationDialog", "Py Fantasy Battlefield Simulator"))
+        self.armyOfLightLabel.setText(_translate(
+            "simulationDialog", "Army of Light"))
+        self.armyOfDarknessLabel.setText(_translate(
+            "simulationDialog", "Army of Darkness"))
         self.runButton.setText(_translate("simulationDialog", "Run"))
         self.runButton.setShortcut(_translate("simulationDialog", "Ctrl+R"))
         self.quitButton.setText(_translate("simulationDialog", "Quit"))
         self.quitButton.setShortcut(_translate("simulationDialog", "Ctrl+Q"))
         self.victorLabel.setText(_translate("simulationDialog", "Victor:"))
-        self.setArmySizeButton.setText(_translate("simulationDialog", "Set Army Size"))
-        self.setArmySizeButton.setShortcut(_translate("simulationDialog", "Ctrl+S"))
+        self.setArmySizeButton.setText(
+            _translate("simulationDialog", "Set Army Size"))
+        self.setArmySizeButton.setShortcut(
+            _translate("simulationDialog", "Ctrl+S"))
 
 
 if __name__ == "__main__":
@@ -74,4 +80,3 @@ if __name__ == "__main__":
     ui.setupUi(simulationDialog)
     simulationDialog.show()
     sys.exit(app.exec_())
-

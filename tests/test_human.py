@@ -15,13 +15,13 @@ def test_fight():
     human.human_pride = 49
     human.health_points = 50
     enemy = Orc(0)
-    enemy.health_points = 100
+    enemy.health_points = enemy.unit_max()
     enemy.strength = 5
     enemy.location[0] = 1
     enemy.location[1] = 1
     assert human.fight(enemy) == 99
     enemy.health_points = 5
-    enemy.strength = 100
+    enemy.strength = enemy.unit_max()
     assert human.fight(enemy) == 99
     enemy.health_points = 5
     enemy.strength = 5

@@ -24,6 +24,6 @@ def test_take_damage():
     dwarf.health_points = 100
     dwarf.armor = 50
     dwarf.take_damage(10)
-    assert dwarf.health_points == 100
+    assert dwarf.health_points == dwarf.unit_max()
     dwarf.take_damage(90) == 90
     assert dwarf.health_points == 10

@@ -7,10 +7,10 @@ class Wizard(Actor):
     def __init__(self, n_actor_count: int):
         Actor.__init__(self, n_actor_count)
         self.name += "_Wizard"
-        self.magic = randint(1, 100)
+        self.magic = randint(15, self.unit_max())
         self.has_staff = True
         self.will = randint(1, 10)
-        self.intelligence = randint(1, 100)
+        self.intelligence = randint(10, self.unit_max())
 
     def to_string(self):
         return Actor.to_string(
@@ -18,5 +18,6 @@ class Wizard(Actor):
             self.will) + "\nIntelligence : " + str(self.intelligence)
 
     def fight(self, enemy) -> int:
-        damage = Actor.fight_from_distance(self, enemy, self.intelligence, self.magic)
+        damage = Actor.fight_from_distance(
+            self, enemy, self.intelligence, self.magic)
         return damage

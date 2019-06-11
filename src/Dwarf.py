@@ -7,7 +7,7 @@ class Dwarf(Actor):
     def __init__(self, n_actor_count: int):
         Actor.__init__(self, n_actor_count)
         self.name += "_Dwarf"
-        self.armor = randint(1, 100)
+        self.armor = randint(1, 50)
         self.axe_strength = randint(1, 50)
 
     def to_string(self):

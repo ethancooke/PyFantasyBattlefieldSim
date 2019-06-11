@@ -20,7 +20,7 @@ def test_move_actor():
     enemy.location[0] = 10  #
     enemy.location[1] = 50  #
     hobbit.speed = 10
-    hobbit.runs = 1
+    hobbit.runs = hobbit.max_runs()
     hobbit.move_actor(enemy)
     assert hobbit.location[0] == 30  # 40 - 10 = 30
     assert hobbit.location[1] == 50  # 40 + 10 = 50
@@ -37,6 +37,6 @@ def test_take_damage():
     hobbit.fear = 50
     hobbit.health_points = 100
     hobbit.take_damage(40)
-    assert hobbit.health_points == 100
+    assert hobbit.health_points == hobbit.unit_max()
     hobbit.take_damage(60)
     assert hobbit.health_points == 40

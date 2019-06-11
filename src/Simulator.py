@@ -1,5 +1,6 @@
 from src.Army import Army
 import matplotlib.pyplot as plt
+import time
 
 
 class Simulator:
@@ -8,17 +9,20 @@ class Simulator:
         self.light_army = Army("Light", 1000)
         self.victory = False
         self.victor = ""
+        self.count = 0
 
     def run_simulation(self):
+        start = time.time()
         plt.ion
-        count = 0
+        self.count = 0
         self.victory = False
         self.victor = ""
         if self.get_light_army_size() > 0 and self.get_dark_army_size() > 0:
             while self.victory is False:
-                count += 1
-                self.draw_scatter('Turn: ' + str(count), self.display_scatter(self.dark_army),
-                                  self.display_scatter(self.light_army))
+                self.count += 1
+                self.draw_scatter('Turn: ' + str(self.count) + ' | Dark: ' + str(self.dark_army.get_size()) + ' | Light: ' +
+                                  str(self.light_army.get_size()), self.display_scatter(
+                                      self.dark_army), self.display_scatter(self.light_army))
                 # Light Turn
                 self.victory = self.turn(self.light_army, self.dark_army)
                 if self.victory:
@@ -31,6 +35,8 @@ class Simulator:
                     break
         else:
             self.victor = "Army has 0 units"
+        print(time.time() - start)
+        print(str(self.count))
 
     def get_dark_army_size(self) -> int:
         return self.dark_army.get_size()
@@ -64,7 +70,7 @@ class Simulator:
         plt.scatter(dark[0], dark[1], 10, c='r', marker='^', alpha=0.5)
         plt.scatter(light[0], light[1], 10, c='b', marker='s', alpha=0.5)
         plt.draw()
-        plt.pause(0.00001)
+        plt.pause(0.000001)  # Screen doesn't appear without this pause
 
 
 def main():
@@ -72,4 +78,5 @@ def main():
     sim.run_simulation()
 
 
-if __name__ == '__main__': main()
+if __name__ == '__main__':
+    main()
