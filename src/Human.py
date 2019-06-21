@@ -8,6 +8,7 @@ class Human(Actor):
         Actor.__init__(self, n_actor_count)
         self.name += "_Human"
         self.human_pride = randint(1, 50)
+        self.image_path = 'images/human.png'
 
     def to_string(self):
         return Actor.to_string(

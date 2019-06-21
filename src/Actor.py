@@ -1,5 +1,6 @@
 from random import randint
 from math import sqrt
+import pygame.image
 
 
 class Actor():
@@ -11,6 +12,7 @@ class Actor():
         # On a scale of 1000x1000, movement of 1 takes too long
         self.speed = randint(50, self.unit_max())
         self.location = [randint(0, 500), randint(0, self.battlefield_max())]
+        self.image_path = 'images/actor.png'
 
     def to_string(self) -> str:
         return "Name : " + str(self.name) + "\nHealth Points : " + str(self.health_points) + "\nStrength : " + str(
@@ -107,3 +109,6 @@ class Actor():
     @staticmethod
     def battlefield_max():
         return 1000
+
+    def playerImage(self):
+        return pygame.image.load(self.image_path)

@@ -11,6 +11,7 @@ class Wizard(Actor):
         self.has_staff = True
         self.will = randint(1, 10)
         self.intelligence = randint(10, self.unit_max())
+        self.image_path = 'images/wizard.png'
 
     def to_string(self):
         return Actor.to_string(

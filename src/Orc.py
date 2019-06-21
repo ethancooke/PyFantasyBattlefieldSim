@@ -12,6 +12,7 @@ class Orc(Actor):
         self.size = randint(5, 50)
         self.location = [randint(500, self.battlefield_max()), randint(
             0, self.battlefield_max())]
+        self.image_path = 'images/orc.png'
 
     def fight(self, enemy) -> int:
         damage = 0

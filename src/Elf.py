@@ -10,6 +10,7 @@ class Elf(Actor):
         self.name += "_Elf"
         self.bow_strength = randint(15, self.unit_max())
         self.range = randint(10, self.unit_max())
+        self.image_path = 'images/elf.png'
 
     def to_string(self) -> str:
         return Actor.to_string(

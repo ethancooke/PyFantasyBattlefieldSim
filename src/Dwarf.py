@@ -9,6 +9,7 @@ class Dwarf(Actor):
         self.name += "_Dwarf"
         self.armor = randint(1, 50)
         self.axe_strength = randint(1, 50)
+        self.image_path = 'images/dwarf.png'
 
     def to_string(self):
         return Actor.to_string(

@@ -12,6 +12,7 @@ class Hobbit(Actor):
         self.dependence = randint(1, self.unit_max())
         self.fear = randint(1, self.unit_max())
         self.runs = 0
+        self.image_path = 'images/hobbit.png'
 
     def to_string(self) -> str:
         return Actor.to_string(
